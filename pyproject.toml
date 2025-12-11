@@ -1,0 +1,12 @@
+[project]
+name = "tpsoft"
+version = "0.1.0"
+description = "Django 6 + HTMX starter for a specialty contractor SaaS"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.0,<6.1",
+    "django-htmx>=1.27.0",
+    "gunicorn>=23.0.0",
+    "psycopg[binary]>=3.1,<4.0",
+]

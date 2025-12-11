@@ -1,0 +1,45 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}TP Soft | Specialty contractor OS{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <div class="badge">Early foundations</div>
+    <h1>Organize leads, customers, and quotes without the busywork.</h1>
+    <p>
+      TP Soft keeps specialty contractor teams aligned. Capture work, move it through a consistent process, and deliver quotes that keep margins healthy.
+    </p>
+    <div class="cta-buttons">
+      <a class="button primary" href="#" hx-get="{% url 'web:ping' %}" hx-target="#ping-response" hx-swap="innerHTML">Ping with HTMX</a>
+      <a class="button secondary" href="#">Preview the roadmap</a>
+    </div>
+    <div id="ping-response" class="card" style="margin-top: 1rem;">
+      <strong>Live interactions</strong>
+      <p class="muted">Use the button above to trigger a lightweight HTMX request.</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Operational building blocks</h3>
+    <div class="grid two">
+      <div class="kpi">
+        <strong>Lead intake</strong>
+        <span>Capture and qualify work from calls, forms, and referrals.</span>
+      </div>
+      <div class="kpi">
+        <strong>Customer files</strong>
+        <span>Accounts, contacts, and job sites in one organized system.</span>
+      </div>
+      <div class="kpi">
+        <strong>Quote discipline</strong>
+        <span>Use templates and pricing rules to keep every bid consistent.</span>
+      </div>
+      <div class="kpi">
+        <strong>Field-friendly</strong>
+        <span>Built for inspectors and estimators who need quick answers.</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

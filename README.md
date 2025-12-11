@@ -28,6 +28,53 @@ On acceptance: create Job/Project stub + deposit invoice (minimal finance hook)
 
 That’s enough to be valuable without accidentally building a full ERP.
 
+## Project setup
+
+This repository now ships with a Django 6.0 starter configured for HTMX, uv-based dependency management, Docker, and Postgres. The goal is to provide a clean foundation for the specialty-contractor SaaS described above without implementing any business features yet.
+
+### Local development with uv
+
+1. Sync dependencies and create the virtual environment:
+
+   ```bash
+   uv sync
+   ```
+
+2. Apply the initial database migrations (uses SQLite by default unless Postgres environment variables are set):
+
+   ```bash
+   uv run python manage.py migrate
+   ```
+
+3. Start the development server:
+
+   ```bash
+   uv run python manage.py runserver
+   ```
+
+Visit http://127.0.0.1:8000 to see the landing page and a small HTMX interaction.
+
+### Running with Docker Compose
+
+1. Copy the example environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Build and start the services (web + Postgres):
+
+   ```bash
+   docker-compose up --build
+   ```
+
+The Django app will run at http://localhost:8000 and connect to the Postgres service defined in `docker-compose.yml`.
+
+### Notes
+
+- By default the application will use SQLite locally; providing `POSTGRES_*` variables (as in `.env.example`) switches the database configuration to Postgres.
+- The Docker image uses uv for dependency installation to stay aligned with the local tooling.
+
 MVP feature set for initial go-to-market
 1) Salesforce-like CRM-lite (only what supports quoting)
 
