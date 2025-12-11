@@ -4,40 +4,57 @@
 {% block title %}TP Soft | Specialty contractor OS{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <div>
-    <div class="badge">Early foundations</div>
-    <h1>Organize leads, customers, and quotes without the busywork.</h1>
-    <p>
+<section class="grid w-full grid-cols-1 gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+  <div class="space-y-6">
+    <div class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-300">
+      Early foundations
+    </div>
+    <h1 class="text-3xl font-semibold leading-tight text-white md:text-4xl">
+      Organize leads, customers, and quotes without the busywork.
+    </h1>
+    <p class="text-lg leading-relaxed text-slate-300">
       TP Soft keeps specialty contractor teams aligned. Capture work, move it through a consistent process, and deliver quotes that keep margins healthy.
     </p>
-    <div class="cta-buttons">
-      <a class="button primary" href="#" hx-get="{% url 'web:ping' %}" hx-target="#ping-response" hx-swap="innerHTML">Ping with HTMX</a>
-      <a class="button secondary" href="#">Preview the roadmap</a>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <a
+        class="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-400 px-4 py-3 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+        href="#"
+        hx-get="{% url 'web:ping' %}"
+        hx-target="#ping-response"
+        hx-swap="innerHTML"
+      >
+        Ping with HTMX
+      </a>
+      <a
+        class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 px-4 py-3 text-sm font-semibold text-white transition hover:border-slate-500"
+        href="#"
+      >
+        Preview the roadmap
+      </a>
     </div>
-    <div id="ping-response" class="card" style="margin-top: 1rem;">
-      <strong>Live interactions</strong>
-      <p class="muted">Use the button above to trigger a lightweight HTMX request.</p>
+    <div id="ping-response" class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-black/40">
+      <strong class="text-sm font-semibold">Live interactions</strong>
+      <p class="mt-1 text-sm text-slate-300">Use the button above to trigger a lightweight HTMX request.</p>
     </div>
   </div>
-  <div class="card">
-    <h3>Operational building blocks</h3>
-    <div class="grid two">
-      <div class="kpi">
-        <strong>Lead intake</strong>
-        <span>Capture and qualify work from calls, forms, and referrals.</span>
+  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-2xl shadow-black/40">
+    <h3 class="text-lg font-semibold text-white">Operational building blocks</h3>
+    <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
+        <strong class="block text-base font-semibold text-white">Lead intake</strong>
+        <span class="text-sm text-slate-300">Capture and qualify work from calls, forms, and referrals.</span>
       </div>
-      <div class="kpi">
-        <strong>Customer files</strong>
-        <span>Accounts, contacts, and job sites in one organized system.</span>
+      <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
+        <strong class="block text-base font-semibold text-white">Customer files</strong>
+        <span class="text-sm text-slate-300">Accounts, contacts, and job sites in one organized system.</span>
       </div>
-      <div class="kpi">
-        <strong>Quote discipline</strong>
-        <span>Use templates and pricing rules to keep every bid consistent.</span>
+      <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
+        <strong class="block text-base font-semibold text-white">Quote discipline</strong>
+        <span class="text-sm text-slate-300">Use templates and pricing rules to keep every bid consistent.</span>
       </div>
-      <div class="kpi">
-        <strong>Field-friendly</strong>
-        <span>Built for inspectors and estimators who need quick answers.</span>
+      <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
+        <strong class="block text-base font-semibold text-white">Field-friendly</strong>
+        <span class="text-sm text-slate-300">Built for inspectors and estimators who need quick answers.</span>
       </div>
     </div>
   </div>
